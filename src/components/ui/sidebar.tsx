@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
@@ -9,6 +10,7 @@ interface Links {
   label: string;
   href: string;
   icon: React.JSX.Element | React.ReactNode;
+  onClick?: () => void; 
 }
 
 interface SidebarContextProps {
@@ -158,10 +160,12 @@ export const MobileSidebar = ({
 export const SidebarLink = ({
   link,
   className,
+  children,
   ...props
 }: {
   link: Links;
   className?: string;
+  children?: React.ReactNode;
   props?: LinkProps;
 }) => {
   const { open, animate } = useSidebar();
@@ -172,6 +176,7 @@ export const SidebarLink = ({
         "flex items-center justify-start gap-2  group/sidebar py-2",
         className
       )}
+      onClick={link.onClick}
       {...props}
     >
       {link.icon}

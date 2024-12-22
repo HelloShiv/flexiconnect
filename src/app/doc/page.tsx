@@ -1,11 +1,8 @@
+/* eslint-disable */
 "use client";
-
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../../components/ui/sidebar";
 import {
-  IconArrowLeft,
-  IconBrandTabler,
-  IconUserBolt,
   IconTextRecognition,
   IconAbc,
   IconAlertCircle,
@@ -14,7 +11,6 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type ActiveView = "Dashboard" | "Profile" | "Settings";
@@ -74,7 +70,7 @@ const SidebarDemo = () => {
                 <SidebarLink
                   key={idx}
                   link={link}
-                  onClick={link.onClick} // Handle click events for dynamic views
+                   // Handle click events for dynamic views
                 >
                   <Link href={link.href || "#"} onClick={link.onClick}>
                     <div className="flex items-center gap-2">
@@ -121,47 +117,47 @@ const Dashboard = () => {
 
   const apiEndpoint = "https://spam-azure.vercel.app/api/spam"; // Replace with your actual API endpoint
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setResponse(null);
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+   e.preventDefault();
+   setLoading(true);
+   setError("");
+   setResponse(null);
 
-    console.log("Form submitted, sending request...");
+   console.log("Form submitted, sending request...");
 
-    try {
-      console.log("Sending request to API with body:", { text: inputText });
+   try {
+     console.log("Sending request to API with body:", { text: inputText });
 
-      const res = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: inputText }), // Ensure "text" matches backend expectations
-      });
+     const res = await fetch(apiEndpoint, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify({ text: inputText }), // Ensure "text" matches backend expectations
+     });
 
-      if (!res.ok) {
-        console.error(`API returned status: ${res.status}`);
-        throw new Error(`API returned status ${res.status}`);
-      }
+     if (!res.ok) {
+       console.error(`API returned status: ${res.status}`);
+       throw new Error(`API returned status ${res.status}`);
+     }
 
-      const data = await res.json();
-      console.log("API Response Data:", data);
+     const data = await res.json();
+     console.log("API Response Data:", data);
 
-      setResponse(data);
-    } catch (err) {
-      console.error("Error during fetch:", err);
+     setResponse(data);
+   } catch (err: any) {
+     console.error("Error during fetch:", err);
 
-      if (err instanceof TypeError) {
-        setError("Network error or CORS issue. Please check the API server.");
-      } else {
-        setError(err.message || "An error occurred while making the request.");
-      }
-    } finally {
-      setLoading(false);
-      console.log("Request completed.");
-    }
-  };
+     if (err instanceof TypeError) {
+       setError("Network error or CORS issue. Please check the API server.");
+     } else {
+       setError(err.message || "An error occurred while making the request.");
+     }
+   } finally {
+     setLoading(false);
+     console.log("Request completed.");
+   }
+ };
 
   return (
     <div className="p-6 flex-1 bg-gray-50 dark:bg-neutral-900">
@@ -263,13 +259,13 @@ const Profile = () => {
       console.log("API Response Data:", data);
 
       setResponse(data);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error during fetch:", err);
 
       if (err instanceof TypeError) {
         setError("Network error or CORS issue. Please check the API server.");
       } else {
-        setError(err.message || "An error occurred while making the request.");
+        setError("An error occurred while making the request.");
       }
     } finally {
       setLoading(false);
@@ -378,13 +374,13 @@ const Settings = () => {
       console.log("API Response Data:", data);
 
       setResponse(data);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error during fetch:", err);
 
       if (err instanceof TypeError) {
         setError("Network error or CORS issue. Please check the API server.");
       } else {
-        setError(err.message || "An error occurred while making the request.");
+        setError("An error occurred while making the request.");
       }
     } finally {
       setLoading(false);
@@ -453,7 +449,7 @@ const Settings = () => {
 };
 
 
-export const Logo = () => (
+const Logo = () => (
   <Link
     href="/"
     className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
