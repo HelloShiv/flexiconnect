@@ -458,9 +458,11 @@ const Logo = () => (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="font-medium text-black dark:text-white whitespace-pre"
+      className="md:text-2xl text-xl font-bold transform hover:scale-105 transition-transform bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FDBFE)] text-transparent bg-clip-text "
     >
       FLEXICONNECT
     </motion.span>
   </Link>
 );
+
+
