@@ -121,7 +121,7 @@ export const MobileSidebar = ({
         )}
         {...props}
       >
-        <div className="flex items-center">
+        <div className="flex items-center mx-2">
           {!open && (
             <span className="text-lg font-bold text-neutral-800 transition-transform bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FDBFE)] text-transparent bg-clip-text">
               FlexiConnect

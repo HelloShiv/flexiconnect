@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center px-[5%] m-auto py-6 relative bg-black">
       {/* Logo */}
-      <h1 className="md:text-2xl text-xl font-bold transform hover:scale-105 transition-transform bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FDBFE)] text-transparent bg-clip-text">
+      <h1 className="md:text-2xl my-40 text-xl font-bold transform hover:scale-105 transition-transform bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FDBFE)] text-transparent bg-clip-text">
         FlexiConnect
       </h1>
 
