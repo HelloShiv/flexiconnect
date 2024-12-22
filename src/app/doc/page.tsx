@@ -431,7 +431,7 @@ const Settings = () => {
             {loading && <p>Loading...</p>}
             {error && <p className="text-red-500">Error: {error}</p>}
             {response ? (
-              <pre className="text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
+              <pre className="text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap max-h-64 overflow-auto">
                 {JSON.stringify(response, null, 2)}
               </pre>
             ) : (
