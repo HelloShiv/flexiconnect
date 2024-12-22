@@ -31,8 +31,10 @@ export default function Hero(){
             track your progress, motivate your efforts, and celebrate your success.
           </p>
           </div>
-          <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8">
+          <a href='/doc'>
             <button className="bg-white text-black py-3 px-5 rounded-lg font-medium cursor-pointer hover:bg-[#8d55ff] hover:text-white transform hover:scale-105">Get for free</button>
+            </a>
           </div>
       </div>
     </div>

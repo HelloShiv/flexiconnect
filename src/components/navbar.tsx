@@ -28,9 +28,11 @@ export default function Navbar() {
         >
           <ul className="flex flex-col md:flex-row md:items-center gap-6 justify-center pl-[5%] px-[5%] py-[5%] opacity-70 font-bold tracking-tighter">
             <li>
+              <a href="\doc">
               <h2 className="cursor-pointer hover:text-[#8d55ff] transform hover:scale-105 transition-transform md:text-xl text-2xl  ">
                 API
               </h2>
+              </a>
             </li>
             <li>
               <h2 className="cursor-pointer hover:text-[#8d55ff] transform hover:scale-105 transition-transform md:text-xl text-2xl ">
