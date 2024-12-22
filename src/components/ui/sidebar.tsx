@@ -168,19 +168,24 @@ export const SidebarLink = ({
   children?: React.ReactNode;
   props?: LinkProps;
 }) => {
-  const { open, animate } = useSidebar();
+  const { open, setOpen, animate } = useSidebar();
+
+  const handleClick = () => {
+    if (link.onClick) link.onClick(); // Call the original `onClick` if defined
+    setOpen(false); // Close the sidebar
+  };
+
   return (
     <Link
       href={link.href}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2",
+        "flex items-center justify-start gap-2 group/sidebar py-2",
         className
       )}
-      onClick={link.onClick}
+      onClick={handleClick}
       {...props}
     >
       {link.icon}
-
       <motion.span
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
