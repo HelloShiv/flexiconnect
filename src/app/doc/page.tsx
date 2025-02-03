@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
 type ActiveView = "Dashboard" | "Profile" | "Settings";
 
@@ -167,6 +169,50 @@ const Dashboard = () => {
         spam.
       </p>
 
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button className="mt-6 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+            View API Endpoint Details
+          </button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+              <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
+                API Endpoint & Parameters
+              </Dialog.Title>
+              <Dialog.Description className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Here are the details for using the Spam Detection API:
+              </Dialog.Description>
+              <div className="mt-4">
+                <p className="font-medium">Endpoint:</p>
+                <pre className="text-sm   whitespace-pre-wrap ">
+                  POST
+                  <span className="text-purple-500 pl-3">
+                    https://spam-azure.vercel.app/
+                  </span>
+                </pre>
+                <p className="font-medium mt-2">Example Request:</p>
+                <ul className="list-none pl-5">
+                  <pre className="text-sm text-gray-800 text-purple-500">
+                    {`{
+"text": "pay me or else I will file a lawsuit against you"
+}`}
+                  </pre>
+                </ul>
+              </div>
+              <div className="flex justify-end mt-6">
+                <Dialog.Close asChild>
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                  </button>
+                </Dialog.Close>
+              </div>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
       <div className="mt-6 p-4 bg-white dark:bg-neutral-800 rounded-md shadow-md">
         <h3 className="text-lg font-medium mb-4">Text Input</h3>
 
@@ -277,6 +323,50 @@ const Profile = () => {
     <div className="p-6 flex-1 bg-gray-50 dark:bg-neutral-900">
       <h2 className="text-xl font-semibold">Toxicity API</h2>
       <p>Pass in the parameter to detect if text is toxic or not</p>
+
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button className="mt-6 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+            View API Endpoint Details
+          </button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+              <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
+                API Endpoint & Parameters
+              </Dialog.Title>
+              <Dialog.Description className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Here are the details for using the Spam Detection API:
+              </Dialog.Description>
+              <div className="mt-4">
+                <p className="font-medium">Endpoint:</p>
+                <pre className="text-sm   whitespace-pre-wrap ">
+                  POST
+                  <span className="text-purple-500 pl-3">
+                    https://toxicity-chi.vercel.app/
+                  </span>
+                </pre>
+                <p className="font-medium mt-2">Example Request:</p>
+                <ul className="list-none pl-5">
+                  <pre className="text-sm text-gray-800 text-purple-500">
+                    {`{
+    "comment":"hi there how are u guys i am fine what about u ad"
+}`}
+                  </pre>
+                </ul>
+              </div>
+              <div className="flex justify-end mt-6">
+                <Dialog.Close asChild>
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                  </button>
+                </Dialog.Close>
+              </div>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
 
       <div className="mt-6 p-4 bg-white dark:bg-neutral-800 rounded-md shadow-md">
         <h3 className="text-lg font-medium mb-4">API Dashboard</h3>
@@ -394,6 +484,49 @@ const Settings = () => {
       <p className="mt-2 text-gray-600 dark:text-gray-400">
         Upload an image in base64 format to detect features using the API.
       </p>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button className="mt-6 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+            View API Endpoint Details
+          </button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+              <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
+                API Endpoint & Parameters
+              </Dialog.Title>
+              <Dialog.Description className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Here are the details for using the Spam Detection API:
+              </Dialog.Description>
+              <div className="mt-4">
+                <p className="font-medium">Endpoint:</p>
+                <pre className="text-sm   whitespace-pre-wrap ">
+                  POST
+                  <span className="text-purple-500 pl-3">
+                    https://detect-bice.vercel.app/
+                  </span>
+                </pre>
+                <p className="font-medium mt-2">Example Request:</p>
+                <ul className="list-none pl-5">
+                  <pre className="text-sm text-gray-800 text-purple-500">
+                    {`{
+"imageData": "base64 Image format required"
+}`}
+                  </pre>
+                </ul>
+              </div>
+              <div className="flex justify-end mt-6">
+                <Dialog.Close asChild>
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Close
+                  </button>
+                </Dialog.Close>
+              </div>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
 
       <div className="mt-6 p-4 bg-white dark:bg-neutral-800 rounded-md shadow-md">
         <h3 className="text-lg font-medium mb-4">API Input</h3>

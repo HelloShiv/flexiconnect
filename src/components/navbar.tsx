@@ -34,16 +34,7 @@ export default function Navbar() {
               </h2>
               </a>
             </li>
-            <li>
-              <h2 className="cursor-pointer hover:text-[#8d55ff] transform hover:scale-105 transition-transform md:text-xl text-2xl ">
-                Pricing
-              </h2>
-            </li>
-            <li>
-              <h2 className="cursor-pointer hover:text-[#8d55ff] transform hover:scale-105 transition-transform md:text-xl text-2xl whitespace-nowrap ">
-                Log in
-              </h2>
-            </li>
+            
           </ul>
         </div>
 
