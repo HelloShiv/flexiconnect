@@ -176,8 +176,8 @@ const Dashboard = () => {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
-            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6rounded-lg w-full z-60">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800 w-[300px] sm:w-auto max-w-full overflow-auto">
               <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
                 API Endpoint & Parameters
               </Dialog.Title>
@@ -331,8 +331,8 @@ const Profile = () => {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
-            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6rounded-lg w-full z-60">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800 w-[300px] sm:w-auto max-w-full overflow-auto">
               <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
                 API Endpoint & Parameters
               </Dialog.Title>
@@ -491,8 +491,8 @@ const Settings = () => {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6 rounded-lg w-96 z-60 transform sm:translate-x-0 md:translate-x-[10%] lg:translate-x-[200%]">
-            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800">
+          <Dialog.Content className="fixed inset-0 flex items-center justify-center p-6rounded-lg w-full z-60">
+            <div className="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-800 w-[300px] sm:w-auto max-w-full overflow-auto">
               <Dialog.Title className="text-lg font-semibold text-black dark:text-white">
                 API Endpoint & Parameters
               </Dialog.Title>
